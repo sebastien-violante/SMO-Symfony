@@ -1,0 +1,11 @@
+<footer>
+    {% if ("welcome" in app.request.uri) %}
+        <a href="{{ path('welcome') }}"><img class="footer-picture" src="{{ asset('build/pictures/home-black.svg') }}" alt=""></a>
+        <a href="{{ path('around') }}"><img class="footer-picture" src="{{ asset('build/pictures/compass-grey.svg') }}" alt=""></a>
+        <a href=""><img class="footer-picture" src="{{ asset('build/pictures/logout.svg') }}" alt=""></a>
+    {% elseif ("around" in app.request.uri) %} 
+        <a href="{{ path('welcome') }}"><img class="footer-picture" src="{{ asset('build/pictures/home-grey.svg') }}" alt=""></a>
+        <a href="{{ path('around') }}"><img class="footer-picture" src="{{ asset('build/pictures/compass-black.svg') }}" alt=""></a>
+        <a href=""><img class="footer-picture" src="{{ asset('build/pictures/logout.svg') }}" alt=""></a>
+    {% endif %}
+</footer>

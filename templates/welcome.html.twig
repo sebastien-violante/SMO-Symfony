@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block body %}
+   <div id="title">
+        <h1>Bienvenue</h1>
+        <h2>Forteresse royale de Chinon</h2>
+    </div>
+    <div id="introduction">
+        <img class="large-picture" src="{{ asset('build/pictures/cover.png') }}" alt="">
+        <p id="introduction-text">Partez à la rencontre des grands personnages de l’Histoire : Aliénor d’Aquitaine, Charles VII, Jeanne d’Arc…. Contemplez de magnifiques panoramas sur la ville, la vallée de la Vienne et les vignes du Chinonais. Reconstitutions, visites immersives grâce l'Histopad, animations toute l'année.</p>
+    </div>
+    <div id="weather">
+        <img class="large-picture" src="{{ asset('build/pictures/Weather.png') }}" alt="">
+    </div>
+    <div id="recommandations">
+        <div id="recommandations-title">
+            <img id="recommandations-icon" src="{{ asset('build/pictures/recommandations-icon.png') }}" alt="">
+            <h3 id="recommandations-subtitle">Nos recommandations</h3>
+        </div>
+        <div id="galery">
+            <!-- <img class="nav-previous" src="/pictures/nav-arrow-left.svg"></img>
+            <img class="nav-next" src="/pictures/nav-arrow-right.svg"></img> -->
+            <div class="slider">
+                <div class="place">
+                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}">
+                    <img class="place-category" src="{{ asset('build/pictures/restaurant-icon.svg') }}" alt="">
+                    <p class="place-name">place number 1</p>
+                    <div class="geoloc">
+                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
+                        <p class="place-name">0.5 km</p>
+                    </div>
+                </div>
+
+                <div class="place">
+                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}" alt="">
+                    <img class="place-category" src="{{ asset('build/pictures/restaurant-icon.svg') }}" alt="">
+                    <p class="place-name">place number 2</p>
+                    <div class="geoloc">
+                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}" alt="">
+                        <p class="place-name">0.5 km</p>
+                    </div>
+                </div>
+
+                <div class="place">
+                    <img class="place-picture" src="{{ asset('build/pictures/castle.png') }}">
+                    <img class="place-category" src="{{ asset('build/pictures/restaurant-icon.svg') }}" alt="">
+                    <p class="place-name">place number 3</p>
+                    <div class="geoloc">
+                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
+                        <p class="place-name">0.5 km</p>
+                    </div>
+                </div>
+
+                <div class="place">
+                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}" alt="">
+                    <img class="place-category" src="{{ asset('build/pictures/restaurant-icon.svg') }}" alt="">
+                    <p class="place-name">place number 4</p>
+                    <div class="geoloc">
+                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}" alt="">
+                        <p class="place-name">0.5 km</p>
+                    </div>
+                </div>
+
+                <div class="place">
+                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}">
+                    <img class="place-category" src="{{ asset('build/pictures/restaurant-icon.svg') }}" alt="">
+                    <p class="place-name">place number 5</p>
+                    <div class="geoloc">
+                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
+                        <p class="place-name">0.5 km</p>
+                    </div>
+                </div>
+
+                <div class="place">
+                    <img class="place-picture" src="{{ asset('build/pictures/castle.png') }}" alt="">
+                    <img class="place-category" src="{{ asset('build/pictures/restaurant-icon.svg') }}" alt="">
+                    <p class="place-name">place number 6</p>
+                    <div class="geoloc">
+                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}" alt="">
+                        <p class="place-name">0.5 km</p>
+                    </div>
+                </div>
+
+                <div class="place">
+                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}">
+                    <img class="place-category" src="{{ asset('build/pictures/restaurant-icon.svg') }}" alt="">
+                    <p class="place-name">place number 7</p>
+                    <div class="geoloc">
+                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
+                        <p class="place-name">0.5 km</p>
+                    </div>
+                </div>
+
+                <div class="place">
+                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}" alt="">
+                    <img class="place-category" src="{{ asset('build/pictures/restaurant-icon.svg') }}" alt="">
+                    <p class="place-name">place number 8</p>
+                    <div class="geoloc">
+                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}" alt="">
+                        <p class="place-name">0.5 km</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

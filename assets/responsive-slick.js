@@ -15,13 +15,6 @@ $('.slider').slick({
           dots: false
         }
       },
-      /* {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 5,
-        }
-      }, */
       {
         breakpoint: 480,
         settings: {
@@ -29,8 +22,5 @@ $('.slider').slick({
           slidesToScroll: 1,
         }
       }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
-    ]
+     ]
   });

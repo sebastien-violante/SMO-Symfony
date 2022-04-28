@@ -9,8 +9,10 @@
 import './styles/app.scss';
 
 // start the Stimulus application
-import './bootstrap';
+
+import './responsive-slick';
 import './slick/slick.min.js';
-import './responsive-slick.js';
+import './bootstrap';
+
 
 

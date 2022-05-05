@@ -1,0 +1,12 @@
+globals:
+    today: "Today"
+welcome:
+    welcome: Welcome
+    recommendations: "Our recommendations"
+
+around:
+    title: "Around you"
+    introduction: "This information is brought to by Caravel. \n Access this information ( and much more! ) wherever you are by downloading our app on Play Store or App Store."
+    sites_title: "Sites to discover"
+    activities_title: "Relax and have fun"
+    restaurant_title: "Nearby restaurants"

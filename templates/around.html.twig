@@ -2,281 +2,71 @@
 
 {% block title %}Around{% endblock %}
 
-{% block body %}
-   <div id="title">
-        <h1>Autour de vous</h1>
-        <p>Ces informations vous sont proposées par Caravel.
-            Emportez-les partout avec vous (et bien plus encore !) en téléchargeant l’application sur le Play Store ou l’App Store.</p>
-    </div>
-    
-    <div id="recommandations">
-        <div id="recommandations-title">
-            <img id="recommandations-icon" src="{{ asset('build/pictures/camera.png') }}" alt="">
-            <h3 id="recommandations-subtitle">Sites à découvrir</h3>
+{% block main %}
+    <main>
+        <div class="title">
+            <h1>{{'around.title'|trans}}</h1>
+            <p id="introduction-text-around">{{'around.introduction'|trans}}</p>
         </div>
-        <div id="galery">
-            <div class="slider">
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/lecaroi.png') }}">
-                    
-                    <p class="place-name">Musée le Caroi</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
+        <div id="recommandations">
+            <div id="recommandations-title">
+                <img id="recommandations-icon" src="{{ asset('build/pictures/camera.png') }}" alt="">
+                <h3 id="recommandations-subtitle">{{'around.sites_title'|trans}}</h3>
+            </div>
+            <div id="galery">
+                <div class="slider">
+                    {% for recommendation in recommendations %}
+                        <div class="place">
+                            <img class="place-picture" src="{{ asset(recommendation.picture) }}">
+                            <p class="place-name">{{ recommendation.name }}</p>
+                            <div class="geoloc">
+                                <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
+                                <p class="place-distance">{{ recommendation.distance }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
 
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}" alt="">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/castle.png') }}">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}" alt="">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/castle.png') }}" alt="">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}" alt="">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
+        <div id="recommandations">
+            <div id="recommandations-title">
+                <img id="recommandations-icon" src="{{ asset('build/pictures/balloon.svg') }}" alt="">
+                <h3 id="recommandations-subtitle">{{'around.activities_title'|trans}}</h3>
+            </div>
+            <div id="galery">
+                <div class="slider">
+                    {% for recommendation in recommendations %}
+                        <div class="place">
+                            <img class="place-picture" src="{{ asset(recommendation.picture) }}">
+                            <p class="place-name">{{ recommendation.name }}</p>
+                            <div class="geoloc">
+                                <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
+                                <p class="place-distance">{{ recommendation.distance }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="recommandations">
-        <div id="recommandations-title">
-            <img id="recommandations-icon" src="{{ asset('build/pictures/mountains.png') }}" alt="">
-            <h3 id="recommandations-subtitle">Se divertir et se détendre</h3>
-        </div>
-        <div id="galery">
-            <div class="slider">
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/lecaroi.png') }}">
-                    
-                    <p class="place-name">Musée le Caroi</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}" alt="">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/castle.png') }}">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}" alt="">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/castle.png') }}" alt="">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}" alt="">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
+        <div id="recommandations">
+            <div id="recommandations-title">
+                <img id="recommandations-icon" src="{{ asset('build/pictures/eat.png') }}" alt="">
+                <h3 id="recommandations-subtitle">{{'around.restaurant_title'|trans}}</h3>
+            </div>
+            <div id="galery">
+                <div class="slider">
+                    {% for recommendation in recommendations %}
+                        <div class="place">
+                            <img class="place-picture" src="{{ asset(recommendation.picture) }}">
+                            <p class="place-name">{{ recommendation.name }}</p>
+                            <div class="geoloc">
+                                <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
+                                <p class="place-distance">{{ recommendation.distance }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="recommandations">
-        <div id="recommandations-title">
-            <img id="recommandations-icon" src="{{ asset('build/pictures/eat.png') }}" alt="">
-            <h3 id="recommandations-subtitle">Se restaurer</h3>
-        </div>
-        <div id="galery">
-            <div class="slider">
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/lecaroi.png') }}">
-                    
-                    <p class="place-name">Musée le Caroi</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}" alt="">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/castle.png') }}">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}" alt="">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/castle.png') }}" alt="">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-
-                <div class="place">
-                    <img class="place-picture" src="{{ asset('build/pictures/jeanne.png') }}" alt="">
-                    
-                    <p class="place-name">place number 7</p>
-                    <div class="geoloc">
-                        <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                        <p class="place-name">0.5 km</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    </main>
 {% endblock %}

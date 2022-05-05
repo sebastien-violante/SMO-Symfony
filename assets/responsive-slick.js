@@ -1,4 +1,5 @@
-$('.slider').slick({
+$(document).ready(function(){
+  $('.slider').slick({
     dots: false,
     infinite: true,
     speed: 1000,
@@ -22,5 +23,6 @@ $('.slider').slick({
           slidesToScroll: 1,
         }
       }
-     ]
-  });
+    ]
+  })
+});

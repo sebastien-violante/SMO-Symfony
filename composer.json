@@ -13,10 +13,15 @@
         "symfony/dotenv": "5.4.*",
         "symfony/flex": "^1.17|^2",
         "symfony/framework-bundle": "5.4.*",
+        "symfony/http-client": "5.4.*",
+        "symfony/intl": "5.4.*",
         "symfony/runtime": "5.4.*",
+        "symfony/translation": "5.4.*",
         "symfony/twig-bundle": "5.4.*",
         "symfony/webpack-encore-bundle": "^1.14",
         "symfony/yaml": "5.4.*",
+        "twig/extra-bundle": "^3.3",
+        "twig/intl-extra": "^3.3",
         "twig/twig": "^3.0"
     },
     "config": {

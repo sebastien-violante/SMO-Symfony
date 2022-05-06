@@ -63,11 +63,10 @@ class DisplayController extends AbstractController
             ]
         ];
         
-        $lat = $request->query->get('lat') || 47;
-        $long = $request->query->get('lng') || 0.6;
-        $locale = $request->getLocale();
+        $lat = $request->query->get('lat') | 47;
+        $long = $request->query->get('lng') | 0.6;
         try {
-            $weatherData = json_decode($weatherApi->getData($lat, $long, $locale));
+            $weatherData = json_decode($weatherApi->getData($lat, $long));
             
         } catch (Exception $exception) {
             $weatherData = null;

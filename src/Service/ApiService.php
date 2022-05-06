@@ -15,14 +15,12 @@ class ApiService
         $this->client = $client;
         $this->caravel_api = $caravel_api;
         $this->caravel_key = $caravel_key;
-        $this->supported_locales = $supported_locales;
     }
 
-    public function getData(string $lat, string $long, string $locale ): string
+    public function getData(string $lat, string $long ): string
     {
         try {
-            $locale = str_contains($locale, $this->supported_locales) ? $locale : 'en';
-            $response = $this->client->request('GET', $this->caravel_api.'weather?lat='.$lat.'&lng='.$long.'&lang='.$locale, [
+            $response = $this->client->request('GET', $this->caravel_api.'weather?lat='.$lat.'&lng='.$long.'&lang=fr', [
                 'headers' => [
                     'X-Api-Key' => $this->caravel_key,
                 ]

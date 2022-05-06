@@ -17,7 +17,10 @@ class DisplayController extends AbstractController
 
     /**
      * @Route(
-     *      "/{_locale}/welcome",
+     *      {
+     *          "en": "/welcome",
+     *          "fr": "/bienvenue",
+     *      },
      *      name="welcome",
      *      requirements={
      *          "locale": "en|fr"

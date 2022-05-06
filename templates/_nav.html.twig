@@ -1,0 +1,16 @@
+<nav class="footer">
+	<a href="{{ path('welcome') }}">
+        <img class="footer-picture" 
+            src="{{ asset('build/pictures/home-' ~ (app.request.pathinfo is same as(path('welcome')) ? 'black' : 'grey') ~ '.svg') }}"
+            alt="">
+    </a>
+    <a href="{{ path('around') }}">
+		<img class="footer-picture" 
+            src="{{ asset('build/pictures/compass-' ~ (app.request.pathinfo is same as(path('around')) ? 'black' : 'grey') ~ '.svg') }}"
+            alt=""></a>
+    <a href="">
+        <img class="footer-picture" 
+            src="{{ asset('build/pictures/planet-grey.svg') }}"
+            alt="">
+    </a>
+</nav>

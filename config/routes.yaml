@@ -4,3 +4,5 @@ index:
     defaults:
         route: 'welcome'
         permanent: true
+    requirements: 
+        _locale: en|fr

@@ -6,6 +6,7 @@
 parameters:
     caravel_api: '%env(CARAVEL_API)%'
     caravel_key: '%env(CARAVEL_KEY)%'
+    supported_locales: en|fr
 
 services:
     _defaults:
@@ -14,6 +15,7 @@ services:
         bind:
             $caravel_api: '%caravel_api%'
             $caravel_key: '%caravel_key%'
+            $supported_locales: '%supported_locales%' 
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name

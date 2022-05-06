@@ -10,7 +10,7 @@
         <section id="further_weather">
         {% for day in weatherData.datas.daily.days|slice(1,3)  %}
             <article class="further_weather">
-                <p class="further_temperature">{{ day.date|format_datetime(pattern="EEEE", locale="fr")|capitalize }}</p>
+                <p class="further_temperature">{{ day.date|format_datetime(pattern="EEEE")|capitalize }}</p>
                 <img class="further_weather_icon" src="" alt="">
                 <p class="further_temperature">Min: {{ day.tmin|round }}°C</p>
                 <p class="further_temperature">Max: {{ day.tmax|round }}°C</p>

@@ -15,6 +15,7 @@ class DisplayController extends AbstractController
 
     /* route "/" is defined as redirecting to "/welcome" in config/routes.yaml */
 
+    
     /**
      * @Route(
      *      {
@@ -23,7 +24,7 @@ class DisplayController extends AbstractController
      *      },
      *      name="welcome",
      *      requirements={
-     *          "locale": "en|fr"
+     *          "_locale": "%supported_locales%"
      *      }
      * )
      */
@@ -62,11 +63,11 @@ class DisplayController extends AbstractController
             ]
         ];
         
-        $lat = $request->query->get('lat');
-        $long = $request->query->get('lng');
+        $lat = $request->query->get('lat') || 47;
+        $long = $request->query->get('lng') || 0.6;
         $locale = $request->getLocale();
         try {
-            $weatherData = json_decode($weatherApi->getData($lat, $long));
+            $weatherData = json_decode($weatherApi->getData($lat, $long, $locale));
             
         } catch (Exception $exception) {
             $weatherData = null;
@@ -79,10 +80,13 @@ class DisplayController extends AbstractController
 
     /**
      * @Route(
-     *      "/{_locale}/around",
+     *      {
+     *          "en": "/around",
+     *          "fr": "/a-proximite",
+     *      },
      *      name="around",
      *      requirements={
-     *          "locale": "en|fr"
+     *          "_locale": "supported_locales"
      *      }
      * )
      */

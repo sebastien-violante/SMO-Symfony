@@ -1,6 +1,6 @@
-# index:
-#     path: /
-#     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
-#     defaults:
-#         path: '/welcome'
-#         permanent: true
+index:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'welcome'
+        permanent: true

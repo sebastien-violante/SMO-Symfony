@@ -34,31 +34,31 @@ class DisplayController extends AbstractController
             [
                 'picture' => './resto.webp',
                 'category' => 'restaurant',
-                'name' => 'La bonne fourchette de Touraine du centre de la France en Europe',
+                'name' => 'Le bistrot Régent',
                 'distance' => '0.2km',
             ],
             [
                 'picture' => './resto.webp',
                 'category' => 'restaurant',
-                'name' => "L'auberge de Ricardo",
+                'name' => "Les jardins du Tonnelé",
                 'distance' => '0.3km',
             ],
             [
                 'picture' => './resto.webp',
                 'category' => 'restaurant',
-                'name' => "Lasagnes Alexandro",
+                'name' => "Papaye et Chocolat",
                 'distance' => '0,8km',
             ],
             [
                 'picture' => './activity.webp',
                 'category' => 'activity',
-                'name' => "les data dans tous les états",
+                'name' => "Visite guidée des grottes de Savonnière",
                 'distance' => '0,8km',
             ],
             [
                 'picture' => './site.webp',
                 'category' => 'site',
-                'name' => "Chez Pénélope",
+                'name' => "Château de Serigny sur le Loir",
                 'distance' => '1,2km',
             ]
         ];
@@ -95,31 +95,31 @@ class DisplayController extends AbstractController
             [
                 'picture' => './resto.webp',
                 'category' => 'restaurant',
-                'name' => 'La bonne fourchette de Touraine',
+                'name' => 'Le bistrot Régent',
                 'distance' => '0.2km',
             ],
             [
                 'picture' => './resto.webp',
                 'category' => 'restaurant',
-                'name' => "L'auberge de Ricardo",
+                'name' => "Les jardins du Tonnelé",
                 'distance' => '0.3km',
             ],
             [
                 'picture' => './resto.webp',
                 'category' => 'restaurant',
-                'name' => "Lasagnes Alexandro",
+                'name' => "Papaye et Chocolat",
                 'distance' => '0,8km',
             ],
             [
                 'picture' => './activity.webp',
                 'category' => 'activity',
-                'name' => "les data dans tous les états",
+                'name' => "Visite guidée des grottes de Savonnière",
                 'distance' => '0,8km',
             ],
             [
                 'picture' => './site.webp',
                 'category' => 'site',
-                'name' => "Chez Pénélope, celle qui arrivait en retard aux mariages des autres",
+                'name' => "Château de Serigny sur le Loir",
                 'distance' => '1,2km',
             ]
         ];

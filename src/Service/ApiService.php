@@ -3,7 +3,6 @@
 namespace App\Service;
 
 use Exception;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class ApiService

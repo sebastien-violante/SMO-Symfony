@@ -1,7 +1,6 @@
 {% if weatherData is not empty %}    
     <section id="weather">
         <article id="current_weather">
-            <p class="current_temperature">{{"globals.today"|trans}} :</p>
             <img id="current_weather_icon" src="" >
             <div id="current_data">
                 <p class="current_temperature">{{ weatherData.datas.current.temp|round }}°C</p>

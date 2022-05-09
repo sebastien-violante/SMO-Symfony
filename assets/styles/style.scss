@@ -29,7 +29,6 @@ body {
     font-size: 2em;
     margin-top: 0em;
     margin-bottom: 0em;
-    margin-left: 0.5em;
 }
 
 #current_weather_icon {
@@ -43,7 +42,7 @@ nav {
     max-width: 900px;
     height: 50px;
     z-index: 50;
-    background-color: #F2F2F2;
+    background-color: rgb(242, 242, 242, 0.9);
     position: fixed;
     bottom: 0;
     display: flex;
@@ -65,7 +64,7 @@ nav {
 .further_temperature {
     color: #9A9A9A;
     margin-top: 0.5em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 #further_weather {
@@ -134,7 +133,7 @@ h2 {
 }
 
 #introduction-text-around {
-   margin-left: 1em;
+    margin-left: 1em;
 }
 
 .large-picture {
@@ -243,7 +242,8 @@ h2 {
 #weather  {
     width: 100%;
     text-align: center;
-    background-color:#E0E0E0 ;
+    background-color: #F2F2F2;
+    padding: 1em;
 }
 
 

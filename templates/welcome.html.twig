@@ -4,45 +4,52 @@
 
 {% block main %}
     <main>
-        <div class="title">
-            <h1>{{"welcome.welcome"|trans}}</h1>
-            <h2>Forteresse royale de Chinon</h2>
-        </div>
-        <div id="introduction">
-            <img class="large-picture" src="{{ asset('build/pictures/cover.png') }}" alt="">
-            <p id="introduction-text">Partez à la rencontre des grands personnages de l’Histoire : Aliénor d’Aquitaine, Charles VII, Jeanne d’Arc…. Contemplez de magnifiques panoramas sur la ville, la vallée de la Vienne et les vignes du Chinonais. Reconstitutions, visites immersives grâce l'Histopad, animations toute l'année.</p>
-        </div>
-
-        {% include("_weather.html.twig") %}
+        <h1>{{"welcome.welcome"|trans}}</h1>
+        <p class="welcome-title">Ce service vous est proposé par Val de Loire Wifi Public</p>
+        <section class="info intro">
+            <p class="welcome-intro">La Forteresse de Montrichard, site médiéval d’exception au cœur des châteaux Renaissance, domine la ville et offre une  vue exceptionnelle sur la vallée du Cher.</p>
+            <a class="seemore">Voir plus &gt</a>
+        </section>
+        <h2>En ce <span>moment</span></h2>
         
-        <div id="recommandations">
-            <div id="recommandations-title">
-                <img id="recommandations-icon" src="{{ asset('build/pictures/recommandations-icon.png') }}" alt="">
-                <h3 id="recommandations-subtitle">{{'welcome.recommendations'|trans}}</h3>
-            </div>
-            <div id="galery">
-                <div class="slider">
-                {% for recommendation in recommendations %}
-                    <div class="place">
-                        <img class="place-picture" src="{{ asset(recommendation.picture) }}">
-                        <img class="place-category" src="
-                            {% if recommendation.category == 'restaurant' %}
-                                {{ asset('build/pictures/restaurant-icon.svg') }}
-                            {% elseif  recommendation.category == 'activity' %}
-                                {{ asset('build/pictures/balloon.svg') }}
-                            {% elseif  recommendation.category == 'site' %}
-                                {{ asset('build/pictures/camera.png')}}
-                            {% endif %}
-                            ">
-                        <p class="place-name">{{ recommendation.name }}</p>
-                        <div class="geoloc">
-                            <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                            <p class="place-distance">{{ recommendation.distance }}</p>
+        {# SLIDER START #}
+
+        <div class="slider">
+            {% for recommendation in recommendations %}
+                <section class="info">
+                    <article class="info-title">
+                        <img class="info-title-picture" src="{{ asset(recommendation.picture) }}">
+                        <div class="info-title-text">
+                            <h3>Forteresse de Montrichard</h3>
+                            <p class="info-title-bloc-subtitle">information</p>
+                            <p class="info-title-bloc-subtitle">Ajouté le 01/01/2022</p>
                         </div>
-                    </div>
-                {% endfor %}
+                    </article>
+                    <p class="info-text">Nous vous rappellons que le billet d’entrée donne accès en accès libre à la forteresse, à l’expérience 3D ainsi qu’aux musées archélogique et ethnologique.</p>
+                </section>
+            {% endfor %}
+        </div>
+        {# SLIDER END #}
+
+         <h2>A <span>proximité</span></h2>
+        <section class="logos">
+            <img class="around-logo" src="{{ asset('build/pictures/camera.svg') }}">
+            <img class="around-logo" src="{{ asset('build/pictures/activities.svg') }}">
+            <img class="around-logo" src="{{ asset('build/pictures/restaurants.svg') }}">
+        </section>
+
+        <div class="slider">
+            {% for recommendation in recommendations %}
+            <div class="place">
+                <img class="place-picture" src="{{ asset(recommendation.picture) }}">
+                <p class="place-name">{{ recommendation.name }}</p>
+                <div class="geoloc">
+                    <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
+                    <p class="place-distance">{{ recommendation.distance }}</p>
                 </div>
             </div>
+            {% endfor %}
         </div>
+                    
     <main>
 {% endblock %}

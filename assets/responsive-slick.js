@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $('.slider').slick({
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 1000,
     centerMode: false,
@@ -8,19 +8,21 @@ $(document).ready(function(){
     slidesToScroll: 3,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 900,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 3,
           infinite: true,
-          dots: false
+          dots: true
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 700,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
+          focusOnSelect: true
         }
       }
     ]

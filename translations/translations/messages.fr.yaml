@@ -4,8 +4,12 @@ welcome:
     welcome: Bienvenue
     recommendations: "Nos recommandations"
 
+details:
+    about: "À propos"
+    practical_information: "Informations pratiques"
+
 around:
-    title: "Autour de vous"
+    title: "À proximité"
     introduction: "Ces informations vous sont proposées par Caravel. \n Emportez ces information ( et bien plus encore! )
     partout avec vous en téléchargeant l'application sur le 
     <a href='https://play.google.com/store/apps/details?id=net.imageimages.caravel&hl=fr%E2%89%B7=FR&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>Play Store</a> ou 

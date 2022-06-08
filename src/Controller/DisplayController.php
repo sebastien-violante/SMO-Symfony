@@ -80,6 +80,23 @@ class DisplayController extends AbstractController
     /**
      * @Route(
      *      {
+     *          "en": "/details/{establishment}",
+     *          "fr": "/details/{establishment}",
+     *      },
+     *      name="details",
+     *      requirements={
+     *          "_locale": "%supported_locales%"
+     *      }
+     * )
+     */
+    public function details(string $establishment): Response
+    {
+        return $this->render("detailedView.html.twig", []);
+    }
+
+    /**
+     * @Route(
+     *      {
      *          "en": "/around",
      *          "fr": "/a-proximite",
      *      },
@@ -91,40 +108,40 @@ class DisplayController extends AbstractController
      */
     public function around(): Response
     {
-        $recommendations = [
-            [
-                'picture' => './resto.webp',
-                'category' => 'restaurant',
-                'name' => 'Le bistrot Régent',
-                'distance' => '0.2km',
-            ],
-            [
-                'picture' => './resto.webp',
-                'category' => 'restaurant',
-                'name' => "Les jardins du Tonnelé",
-                'distance' => '0.3km',
-            ],
-            [
-                'picture' => './resto.webp',
-                'category' => 'restaurant',
-                'name' => "Papaye et Chocolat",
-                'distance' => '0,8km',
-            ],
-            [
-                'picture' => './activity.webp',
-                'category' => 'activity',
-                'name' => "Visite guidée des grottes de Savonnière",
-                'distance' => '0,8km',
-            ],
-            [
-                'picture' => './site.webp',
-                'category' => 'site',
-                'name' => "Château de Serigny sur le Loir",
-                'distance' => '1,2km',
-            ]
-        ];
+        // $recommendations = [
+        //     [
+        //         'picture' => './resto.webp',
+        //         'category' => 'restaurant',
+        //         'name' => 'Le bistrot Régent',
+        //         'distance' => '0.2km',
+        //     ],
+        //     [
+        //         'picture' => './resto.webp',
+        //         'category' => 'restaurant',
+        //         'name' => "Les jardins du Tonnelé",
+        //         'distance' => '0.3km',
+        //     ],
+        //     [
+        //         'picture' => './resto.webp',
+        //         'category' => 'restaurant',
+        //         'name' => "Papaye et Chocolat",
+        //         'distance' => '0,8km',
+        //     ],
+        //     [
+        //         'picture' => './activity.webp',
+        //         'category' => 'activity',
+        //         'name' => "Visite guidée des grottes de Savonnière",
+        //         'distance' => '0,8km',
+        //     ],
+        //     [
+        //         'picture' => './site.webp',
+        //         'category' => 'site',
+        //         'name' => "Château de Serigny sur le Loir",
+        //         'distance' => '1,2km',
+        //     ]
+        // ];
         return $this->render("around.html.twig", [
-            'recommendations' => $recommendations,
+            // 'recommendations' => $recommendations,
         ]);
     }
 }

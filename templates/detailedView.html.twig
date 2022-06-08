@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{# TODO: change title #}
+{% block title %}Establishment Name{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('sectionToggler') }}
+{% endblock %}
+
+{% block main %}
+    <main>
+        <button id="go-back">&#12296;</button>
+        <article>
+            <h1>Le Tablier Rouge</h1>
+            <p>
+                <svg width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.50016 24.125C7.86871 22.7334 6.3565 21.2078 4.97933 19.5641C2.91266 17.0958 0.458497 13.4197 0.458497 9.91669C0.457601 8.12768 0.987445 6.37861 1.98098 4.89084C2.97451 3.40308 4.38706 2.24348 6.03988 1.55882C7.69269 0.87416 9.51146 0.695204 11.266 1.0446C13.0206 1.394 14.6321 2.25605 15.8965 3.52164C16.7383 4.35975 17.4056 5.3565 17.8597 6.45421C18.3138 7.55192 18.5456 8.72878 18.5418 9.91669C18.5418 13.4197 16.0877 17.0958 14.021 19.5641C12.6438 21.2078 11.1316 22.7334 9.50016 24.125ZM9.50016 6.04168C8.47245 6.04168 7.48683 6.44994 6.76013 7.17665C6.03342 7.90335 5.62516 8.88897 5.62516 9.91669C5.62516 10.9444 6.03342 11.93 6.76013 12.6567C7.48683 13.3834 8.47245 13.7917 9.50016 13.7917C10.5279 13.7917 11.5135 13.3834 12.2402 12.6567C12.9669 11.93 13.3752 10.9444 13.3752 9.91669C13.3752 8.88897 12.9669 7.90335 12.2402 7.17665C11.5135 6.44994 10.5279 6.04168 9.50016 6.04168Z" fill="#38BBCF"/>
+                </svg>
+                2 rue de la Juiverie, 41 400 MONTRICHARD
+            </p>
+            <ul id="visible-section-choices">
+                <li><button id="about">{{'details.about'|trans}}</button></li>
+                <li><button id="information">{{'details.practical_information'|trans}}</button></li>
+            </ul>
+            <section id="about-section" class="section-to-toggle visible">
+                <h2>Description</h2>
+                <p>
+                    L'équipe du Tablier rouge vous accueille dans un lieu chaleureux. 
+                    Le chef vous concocte des plats 100% faits maison. 
+                    Menus du jour, menus à thèmes tous les mois, viandes du jour... 
+                    le tout accompagné de vins soigneusement sélectionnés pour vous.
+                <p>
+            </section>
+            <section id="information-section" class="section-to-toggle">
+                <h2>Dummy usefull Information</h2>
+                <p>
+                    That information is so so important you're better listen carefully,
+                    take notes and spread the word. Are you ready ?
+                    You just lost 10 secs reading this BUT you are fabulous ✨
+            </section
+        </article>
+    </main>
+{% endblock %}

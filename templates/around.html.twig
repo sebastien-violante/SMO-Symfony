@@ -2,70 +2,41 @@
 
 {% block title %}Around{% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('addMap') }}
+{% endblock %}
+
 {% block main %}
     <main>
-        <div class="title">
+        <header>
             <h1>{{'around.title'|trans}}</h1>
-            <p id="introduction-text-around">{{'around.introduction'|trans|raw}}.</p>
-        </div>
-        <div id="recommandations">
-            <div id="recommandations-title">
-                <img id="recommandations-icon" src="{{ asset('build/pictures/camera.png') }}" alt="">
-                <h3 id="recommandations-subtitle">{{'around.sites_title'|trans}}</h3>
-            </div>
-            <div id="galery">
-                <div class="slider">
-                    {% for recommendation in recommendations %}
-                        <div class="place">
-                            <img class="place-picture" src="{{ asset(recommendation.picture) }}">
-                            <p class="place-name">{{ recommendation.name }}</p>
-                            <div class="geoloc">
-                                <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                                <p class="place-distance">{{ recommendation.distance }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-            </div>
-        </div>
-
-        <div id="recommandations">
-            <div id="recommandations-title">
-                <img id="recommandations-icon" src="{{ asset('build/pictures/balloon.svg') }}" alt="">
-                <h3 id="recommandations-subtitle">{{'around.activities_title'|trans}}</h3>
-            </div>
-            <div id="galery">
-                <div class="slider">
-                    {% for recommendation in recommendations %}
-                        <div class="place">
-                            <img class="place-picture" src="{{ asset(recommendation.picture) }}">
-                            <p class="place-name">{{ recommendation.name }}</p>
-                            <div class="geoloc">
-                                <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                                <p class="place-distance">{{ recommendation.distance }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <div id="recommandations">
-            <div id="recommandations-title">
-                <img id="recommandations-icon" src="{{ asset('build/pictures/eat.png') }}" alt="">
-                <h3 id="recommandations-subtitle">{{'around.restaurant_title'|trans}}</h3>
-            </div>
-            <div id="galery">
-                <div class="slider">
-                    {% for recommendation in recommendations %}
-                        <div class="place">
-                            <img class="place-picture" src="{{ asset(recommendation.picture) }}">
-                            <p class="place-name">{{ recommendation.name }}</p>
-                            <div class="geoloc">
-                                <img class="geoloc-icon" src="{{ asset('build/pictures/geoloc.png') }}">
-                                <p class="place-distance">{{ recommendation.distance }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+            <ul><ul>
+        </header>
+        <style>
+            #map {
+                width: 100%;
+                height: 380px;
+                overflow: hidden;
+                margin-bottom: 1.5em;
+            }
+        </style>
+        <div id="map" data-longitude="0.68484" data-latitude="47.394144"></div>
+        <svg id="overlay" width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="lightblue" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 10C20 14.4183 12 22 12 22C12 22 4 14.4183 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10Z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 11C12.5523 11 13 10.5523 13 10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10C11 10.5523 11.4477 11 12 11Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+            <img src="https://picsum.photos/200/300" alt="Lorem picsum" />
+            <div>
+                <h2>Le Tablier Rouge</h2>
+                <p>
+                    <svg id="overlay" width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="lightblue" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 10C20 14.4183 12 22 12 22C12 22 4 14.4183 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10Z" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M12 11C12.5523 11 13 10.5523 13 10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10C11 10.5523 11.4477 11 12 11Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    1 km
+                </p>
             </div>
         </div>
     </main>

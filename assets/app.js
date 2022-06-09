@@ -13,6 +13,7 @@ const $ = require('jquery');
 
 // create global $ and jQuery variables
 global.$ = global.jQuery = $;
+document.getElementById('go-back')?.addEventListener('click', () => history.back());
 
 // start the Stimulus application
 import './bootstrap';

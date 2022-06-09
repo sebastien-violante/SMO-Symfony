@@ -4,6 +4,10 @@ welcome:
     welcome: Welcome
     recommendations: "Our recommendations"
 
+details:
+    about: About
+    practical_information: "Practical information"
+
 around:
     title: "Around you"
     introduction: "This information is brought to by Caravel. \n Access this information ( and much more! ) wherever you are by downloading our app on the

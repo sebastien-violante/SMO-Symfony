@@ -17,7 +17,5 @@ document.getElementById('go-back')?.addEventListener('click', () => history.back
 
 // start the Stimulus application
 import './bootstrap';
-import './scroll';
-
 import './slick/slick.min.js'
-import './responsive-slick';
+import './responsive-slick'

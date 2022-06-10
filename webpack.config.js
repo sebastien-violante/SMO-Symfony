@@ -13,7 +13,7 @@ Encore
     .setPublicPath('/build')
     .copyFiles({
         from: './assets/pictures',
-        to: 'pictures/[path][name].[hash:8].[ext]',
+        to: 'pictures/[path][name].[ext]',
         pattern: /\.(png|jpg|jpeg|webp|svg)$/
     })
 
@@ -29,6 +29,7 @@ Encore
     .addEntry('app', './assets/app.js')
     .addEntry('sectionToggler', './assets/scripts/sectionToggler.js')
     .addEntry('addMap', './assets/scripts/addMap.js')
+    .addEntry('selected', './assets/scripts/selected.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

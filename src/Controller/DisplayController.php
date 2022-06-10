@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DisplayController extends AbstractController
 {
@@ -28,52 +29,19 @@ class DisplayController extends AbstractController
      *      }
      * )
      */
-    public function welcome(Request $request ,ApiService $weatherApi): Response
+    public function welcome(Request $request ,ApiService $apiService): Response
     {
-        $recommendations = [
-            [
-                'picture' => './resto.webp',
-                'category' => 'restaurant',
-                'name' => 'Le bistrot Régent',
-                'distance' => '0.2km',
-            ],
-            [
-                'picture' => './resto.webp',
-                'category' => 'restaurant',
-                'name' => "Les jardins du Tonnelé",
-                'distance' => '0.3km',
-            ],
-            [
-                'picture' => './resto.webp',
-                'category' => 'restaurant',
-                'name' => "Papaye et Chocolat",
-                'distance' => '0,8km',
-            ],
-            [
-                'picture' => './activity.webp',
-                'category' => 'activity',
-                'name' => "Visite guidée des grottes de Savonnière",
-                'distance' => '0,8km',
-            ],
-            [
-                'picture' => './site.webp',
-                'category' => 'site',
-                'name' => "Château de Serigny sur le Loir",
-                'distance' => '1,2km',
-            ]
-        ];
         
         $lat = $request->query->get('lat') | 47;
         $long = $request->query->get('lng') | 0.6;
         try {
-            $weatherData = json_decode($weatherApi->getData($lat, $long));
+            $recommendations = json_decode($apiService->getRecommendations('site'));
             
         } catch (Exception $exception) {
-            $weatherData = null;
+            $recommendations = null;
         }
         return $this->render("welcome.html.twig", [
-            'weatherData' => $weatherData,
-            'recommendations' => $recommendations,
+            'recommendations' => $recommendations
         ]);
     }
 
@@ -144,4 +112,30 @@ class DisplayController extends AbstractController
             // 'recommendations' => $recommendations,
         ]);
     }
+
+    /**
+     * @Route(
+     *      {
+     *          "en": "/etablissements/{type}",
+     *          "fr": "/etablissements/{type}",
+     *      },
+     *      name="establishments",
+     *      requirements={
+     *          "_locale": "%supported_locales%"
+     *      }
+     * )
+     */
+    public function recommentations(Request $request ,ApiService $apiService, string $type): JsonResponse
+    {
+        
+        try {
+            $recommendations = ($apiService->getRecommendations($type));
+            
+        } catch (Exception $exception) {
+            $recommendations = null;
+        }
+        return new JsonResponse($recommendations);
+            
+    }
+
 }

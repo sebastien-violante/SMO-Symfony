@@ -11,7 +11,7 @@ $(document).ready(function(){
         breakpoint: 900,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 3,
+          slidesToScroll: 2,
           infinite: true,
           dots: true
         }
@@ -27,4 +27,10 @@ $(document).ready(function(){
       }
     ]
   })
+
+  $('.around-logo').on('click', function() {
+    $('slider').slick('slickAdd', '<p>Hello !</p>')
+  })
+  
 });
+

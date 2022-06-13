@@ -1,0 +1,150 @@
+body {
+    padding-bottom: 0;
+}
+
+#around {
+    width: 100%;
+    min-height: 100%;
+}
+
+#around>header {
+    width: 100%;
+    max-width: 900px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: rgba( 255, 255, 255, 0.8);
+}
+
+#around-title {
+    width: 100%;
+    text-align: center;
+}
+
+#filters {
+    margin: 0;
+    padding: 1rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: 1rem;
+    background-color: var(--theme);
+}
+
+.filter {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.filter-btn {
+    border: none;
+    padding: 0;
+    border-radius: 10px;
+    background-color: unset;
+    
+}
+
+.filter-icon {
+    border-radius: 10px;
+    filter: grayscale(100%);
+}
+
+.filter-icon.chosen {
+    filter: unset;
+}
+
+#map {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.ol-attribution {
+    position: absolute;
+    bottom: calc(50px + 0.25rem);
+    right: 0rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ol-attribution.ol-collapsed ul{
+    width: 0;
+    overflow: hidden;
+    transition: width 3s;
+}
+
+.ol-attribution button {
+    align-self: flex-end;
+    border: none;
+    border-radius: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--blue);
+    text-align: center;
+    font-family: "Quicksand", "Roboto", serif;;
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+.ol-attribution ul {
+    margin: 0;
+    padding: 0;
+}
+
+#poi-card {
+    position: fixed;
+    bottom: calc(50px + 1.5rem);
+    right: calc(50% - 150px);
+    left: calc(50% - 150px);
+    z-index: 1;
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 10px;
+    background-color: var(--theme);
+    border-radius: 10px;
+}
+
+#poi-img {
+    height: 75px;
+    width: 75px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: none;
+}
+
+#poi-card-information {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 5px;
+    margin: 0;
+}
+
+#poi-card-title {
+    margin: 0;
+}
+
+#poi-card-details {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+#poi-card-details p {
+    margin: 0;
+    color: var(--light-text-color);
+}

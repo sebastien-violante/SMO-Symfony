@@ -3,7 +3,7 @@ import { closestOnCircle } from "ol/coordinate";
 let icons = [...document.getElementsByClassName("around-logo")];
 
 document.getElementById('filter').addEventListener('click', async (e) => {
-   
+
     /* console.log(e.target.dataset.establishmentType); */
     let response = await fetch('./etablissements/'+e.target.dataset.establishmentType)
     .then(response => response.json());

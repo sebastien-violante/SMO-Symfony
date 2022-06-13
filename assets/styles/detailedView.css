@@ -1,0 +1,70 @@
+#detailed-view {
+    height: 100%;
+    width: 100%;
+}
+
+/* kind of parallax window */
+#detailed-view::before {
+    display: block;
+    content: '';
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45vh;
+    z-index: -1;
+    margin-bottom: -5vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#establishment-details {
+    padding-top: 5vh;
+    border-radius: 30px 30px 0 0;
+    background-color: var(--theme);
+}
+
+#establishment-name {
+    color: var(--text-color);
+    margin: 0 1rem;
+}
+
+#establishment-address, #visible-section-choices {
+    padding: 0 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    color: var(--light-text-color);
+    font-size: 1rem;
+}
+
+#visible-section-choices {
+    margin: 0;
+    box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.3);
+}
+
+#visible-section-choices button {
+    background-color: transparent;
+    border: none;
+    font-family: "Quicksand", "Roboto", serif;
+    font-weight: normal;
+    font-size: 1rem;
+    color: var(--light-text-color);
+    padding-bottom: 1rem;
+}
+
+#visible-section-choices button.chosen{
+    border-bottom: 3px solid var(--blue);
+}
+
+.section-to-toggle {
+    display: none;
+    padding: 0 1rem;
+}
+
+.section-to-toggle.visible {
+    display: block;
+}

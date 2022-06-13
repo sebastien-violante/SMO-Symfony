@@ -9,13 +9,13 @@
 
 {% block main %}
     <main>
-        <h1>{{"welcome.welcome"|trans}}</h1>
+        <h1 style="margin: 0 2rem;">{{"welcome.welcome"|trans}}</h1>
         <p class="welcome-title">Ce service vous est proposé par Val de Loire Wifi Public</p>
         <section class="info intro">
             <p class="welcome-intro">La Forteresse de Montrichard, site médiéval d’exception au cœur des châteaux Renaissance, domine la ville et offre une  vue exceptionnelle sur la vallée du Cher.</p>
             <a class="seemore">Voir plus &gt</a>
         </section>
-        <h2>En ce <span>moment</span></h2>
+        <h2 style="font-size: 1.2rem;" >En ce <span>moment</span></h2>
        
         {# SLIDER START #}
         <div class="slider">
@@ -35,7 +35,7 @@
         </div>
         {# SLIDER END #}
 
-        <h2>A <span>proximité</span></h2>
+        <h2 style="font-size: 1.2rem;" >A <span>proximité</span></h2>
         <ul id="filter">
             <li><button ><img data-establishment-type="site" id="1" class="around-logo active" src="{{ asset('build/pictures/camera.svg') }}"></button></li>
             <li><button ><img data-establishment-type="activity" id="2" class="around-logo" src="{{ asset('build/pictures/activities.svg') }}"></button></li>

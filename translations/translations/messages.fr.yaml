@@ -14,6 +14,6 @@ around:
     partout avec vous en téléchargeant l'application sur le 
     <a href='https://play.google.com/store/apps/details?id=net.imageimages.caravel&hl=fr%E2%89%B7=FR&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>Play Store</a> ou 
     l'<a href='https://apps.apple.com/fr/app/caravel/id1102100911'>App Store</a>"
-    sites_title: "Sites à découvrir"
-    activities_title: "Se divertir et se détendre"
-    restaurant_title: "Se restaurer"
+    sites: "Découvrir"
+    activities: "Se divertir"
+    restaurants: "Se restaurer"

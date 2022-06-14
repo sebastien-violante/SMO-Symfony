@@ -8,17 +8,16 @@
 {% endblock %}
 
 {% block main %}
-    <main>
-        <h1 style="margin: 0 2rem;">{{"welcome.welcome"|trans}}</h1>
-        <p class="welcome-title">Ce service vous est proposé par Val de Loire Wifi Public</p>
+    <main class="welcome">
+        <h1 id="topTitle" style="margin: 0 2rem;">{{"welcome.welcome"|trans}}</h1>
+        <p id="topSubTitle" class="welcome-title">Ce service vous est proposé par Val de Loire Wifi Public</p>
         <section class="info intro">
             <p class="welcome-intro">La Forteresse de Montrichard, site médiéval d’exception au cœur des châteaux Renaissance, domine la ville et offre une  vue exceptionnelle sur la vallée du Cher.</p>
-            <a class="seemore">Voir plus &gt</a>
+            <a href="{{ path('details', { 'establishment': "establishmentcode" }) }}" class="seemore">Voir plus &gt</a>
         </section>
-        <h2 style="font-size: 1.2rem;" >En ce <span>moment</span></h2>
-       
+        <h2 class="welcomeh2" style="font-size: 1.2rem;" ><span class="lightfont">En ce </span>moment</h2>
         {# SLIDER START #}
-        <div class="slider">
+        <div class="newSlider">
             {% for recommendation in recommendations %}
                 <section class="info">
                     <article class="info-title">
@@ -31,19 +30,61 @@
                     </article>
                     <p class="info-text">Nous vous rappellons que le billet d’entrée donne accès en accès libre à la forteresse, à l’expérience 3D ainsi qu’aux musées archélogique et ethnologique.</p>
                 </section>
+                <section class="info">
+                    <article class="info-title">
+                        <img class="info-title-picture" src="{{ asset("build/pictures/#{ recommendation.picture }") }}">
+                        <div class="info-title-text">
+                            <h3>Forteresse de Montrichard</h3>
+                            <p class="info-title-bloc-subtitle">information</p>
+                            <p class="info-title-bloc-subtitle">Ajouté le 01/01/2022</p>
+                        </div>
+                    </article>
+                    <p class="info-text">expérience 3D ainsi qu’aux musées archélogique et ethnologique.</p>
+                </section>
+                <section class="info">
+                    <article class="info-title">
+                        <img class="info-title-picture" src="{{ asset("build/pictures/#{ recommendation.picture }") }}">
+                        <div class="info-title-text">
+                            <h3>Forteresse de Montrichard</h3>
+                            <p class="info-title-bloc-subtitle">information</p>
+                            <p class="info-title-bloc-subtitle">Ajouté le 01/01/2022</p>
+                        </div>
+                    </article>
+                    <p class="info-text">forteresse, à l’expérience 3D ainsi qu’aux musées archélogique et ethnologique.</p>
+                </section>
             {% endfor %}
         </div>
         {# SLIDER END #}
 
-        <h2 style="font-size: 1.2rem;" >A <span>proximité</span></h2>
-        <ul id="filter">
-            <li><button ><img data-establishment-type="site" id="1" class="around-logo active" src="{{ asset('build/pictures/camera.svg') }}"></button></li>
-            <li><button ><img data-establishment-type="activity" id="2" class="around-logo" src="{{ asset('build/pictures/activities.svg') }}"></button></li>
-            <li><button ><img data-establishment-type="restaurant" id="3" class="around-logo" src="{{ asset('build/pictures/restaurants.svg') }}"></button></li>
+        <h2 class="welcomeh2" style="font-size: 1.2rem;" ><span class="lightfont">A </span>proximité</h2>
+        <ul id="filtersContainer">
+            <div class="filterBlock">
+                <li><button class="filterButton"><img data-establishment-type="site" id="1" class="around-logo selected" src="{{ asset('build/pictures/camera.svg') }}"></button></li>
+                <p>Découvrir</p>
+            </div>
+            <div class="filterBlock">
+                <li><button class="filterButton"><img data-establishment-type="activity" id="2" class="around-logo" src="{{ asset('build/pictures/activities.svg') }}"></button></li>
+                <p>Se divertir</p>
+            </div>
+            <div class="filterBlock">
+                <li><button class="filterButton"><img data-establishment-type="restaurant" id="3" class="around-logo" src="{{ asset('build/pictures/restaurants.svg') }}"></button></li>
+                <p>Se restaurer</p>
+            </div>
         </ul>
 
-        <div id="slider" class="slider">
-            
+        <div id="slider" class="aroundSlider">
+        {% for recommendation in recommendations %}
+            <article class="place">
+                <img  class = "place-picture" src="{{ asset("build/pictures/#{ recommendation.picture }") }}">
+                <h4 class="recommandationName">{{ recommendation.name}}</h4>
+                <div class="geoloc">
+                    <svg width="15" height="21" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.50016 24.125C7.86871 22.7334 6.3565 21.2078 4.97933 19.5641C2.91266 17.0958 0.458497 13.4197 0.458497 9.91669C0.457601 8.12768 0.987445 6.37861 1.98098 4.89084C2.97451 3.40308 4.38706 2.24348 6.03988 1.55882C7.69269 0.87416 9.51146 0.695204 11.266 1.0446C13.0206 1.394 14.6321 2.25605 15.8965 3.52164C16.7383 4.35975 17.4056 5.3565 17.8597 6.45421C18.3138 7.55192 18.5456 8.72878 18.5418 9.91669C18.5418 13.4197 16.0877 17.0958 14.021 19.5641C12.6438 21.2078 11.1316 22.7334 9.50016 24.125ZM9.50016 6.04168C8.47245 6.04168 7.48683 6.44994 6.76013 7.17665C6.03342 7.90335 5.62516 8.88897 5.62516 9.91669C5.62516 10.9444 6.03342 11.93 6.76013 12.6567C7.48683 13.3834 8.47245 13.7917 9.50016 13.7917C10.5279 13.7917 11.5135 13.3834 12.2402 12.6567C12.9669 11.93 13.3752 10.9444 13.3752 9.91669C13.3752 8.88897 12.9669 7.90335 12.2402 7.17665C11.5135 6.44994 10.5279 6.04168 9.50016 6.04168Z" fill="#38BBCF"/>
+                    </svg>
+                    <p class="geoloc-distance">{{ recommendation.distance }}</p>
+                </div>
+            </article>
+        {% endfor %}  
         </div>
     <main>
 {% endblock %}

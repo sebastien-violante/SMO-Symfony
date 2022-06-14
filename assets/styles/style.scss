@@ -163,7 +163,7 @@ body {
     max-width: 900px;
     position: relative;
     margin: 0 auto;
-    padding-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 /* #current_data {
@@ -409,14 +409,41 @@ h2 {
  */
 
 // CSS FOR SECOND VERSION
-.active {
-    box-shadow: 0px 3px 3px darkslategrey;
+.selected {
+    box-shadow: 0px 4px 8px darkslategrey;
+    border-radius: 10px;
 }
 
-// button {
-//     background: transparent;
-//     border: none;
-// }
+.filterBlock {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.filterButton {
+    background: transparent;
+    border: none;
+}
+
+#filtersContainer {
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: space-evenly;
+}
+
+.footer {
+    border-radius: 25px 25px 0 0;
+}
+
+.footer svg {
+    color: var(--light-text-color);
+}
+
+.footer .current-path {
+    color: var(--blue);
+}
 
 .geoloc {
     display: flex;
@@ -433,6 +460,9 @@ h2 {
     margin-left: 0.5em;
 }
 
+.geoloc-distance {
+    margin: 0 ;
+}
 h1 {
     font-size: 1.5rem;
 }
@@ -468,19 +498,13 @@ strong {
 .info {
     background-color: #F7F2F7 ;
     margin: 1rem;
-    padding: 1rem;
-    height: 160px;
+    padding: 2rem;
     border-radius: 10px;
-    position: relative;
+    height: auto;
+    min-width: 300px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 }
 
-.info-text {
-    display: -webkit-box; 
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow:ellipsis;
-}
 .info-title {
     display: flex;
     flex-direction: row;
@@ -505,6 +529,10 @@ strong {
     background-color: white ;
 }
 
+.lightfont {
+    font-weight: 300;
+}
+
 .logos {
     margin: 1rem auto;
     display: flex;
@@ -515,12 +543,13 @@ strong {
 }
 
 .place {
-    height: 230px;
+    height: 220px;
     width: 200px;
     border-radius: 15px;
     margin: 1rem;
-    padding: 0.3rem;
-    border: 1px solid black;
+    padding: 0.6rem;
+    min-width: 250px;
+    background-color: #FCFCFC;
 }
 
 .place-picture {
@@ -532,28 +561,31 @@ strong {
     overflow: hidden;
 }
 
-span {
-    font-weight: 800;
+.recommandationName {
+margin: 0.4rem;
 }
 
 .seemore {
-    position: absolute;
-    top: 140px;
+    display: block;
     width: 140px;
-    height: 37px;
-    left: 204px;
     background: linear-gradient(90deg, #38BBCF 68.69%, rgba(56, 187, 207, 0) 127.25%);
     border-radius: 13px;
     text-align: center;
     line-height: 35px;
     color: white;
-    font-weight: bold;
+    border: none;
+    font-size: 1rem;
+    margin-right: 0;
+    margin-left: auto;
+    padding: 0.3rem;
+    text-decoration: none;
 }
-/* Especially to maintain dots inside div class info */
-span {
-    font-weight: 700;
+
+.slider .slick-track, .newSlider .slick-track,  {
+    display:flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
 }
-/* ---------------------------------------------------- */
 
 .slick-dots {
     bottom: 25px;
@@ -568,9 +600,27 @@ span {
     font-size: 10px;
 }
 
+#topTitle {
+    padding-top: 2rem;
+}
+
+#topSubTitle {
+    font-size: 1,2rem;
+    margin-top: 1rem;
+}
+
 ul {
     list-style-type: none;
 }
+
+.welcome {
+    background: linear-gradient(rgba(255, 254, 254, 0.9), 30%, rgba(196, 196, 196, 0.9)), url("https://placeimg.com/300/800/arch");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 25px;
+}
+
 .welcome-intro {
     display: -webkit-box; 
     -webkit-line-clamp: 4;
@@ -578,6 +628,12 @@ ul {
     overflow: hidden;
     text-overflow:ellipsis;
 }
+
+.welcomeh2 {
+    padding: 0 1rem;
+    margin: 0;
+}
+
 .welcome-title {
     color: #6F7789;
     margin: 0 2rem;
